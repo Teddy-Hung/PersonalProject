@@ -22,4 +22,4 @@ https://www.figma.com/file/JXJ7kshJVGkTgxC91G25gh/Restaurant-Finder?node-id=0%3A
 * bcryptjs - Hashing and Salting passwords
 
 ## API
-# YELP Fusion - https://www.yelp.com/developers/documentation/v3
+* YELP Fusion - https://www.yelp.com/developers/documentation/v3
