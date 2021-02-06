@@ -1,3 +1,11 @@
 @import '../../scss/resets';
 @import '../../scss/variables';
 @import '../../scss/mixins';
+
+.landing-container {
+    @include flexCenter(column);
+    margin: 12vh 35vw 0 36vw;
+    width: 500px;
+    height: 500px;
+    background: rgba(150, 150, 150, 0.87);
+}

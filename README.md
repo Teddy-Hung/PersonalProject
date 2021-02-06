@@ -12,7 +12,7 @@ https://www.figma.com/file/JXJ7kshJVGkTgxC91G25gh/Restaurant-Finder?node-id=0%3A
 * react-redux - Connecting a React application to a Redux store
 * react-router-dom - Allows for routing in a React application
 * axios - Makes http requests to a server
-* sass - Styling
+* node-sass - Styling
 
 ## Backend
 * express - Node framework for building a server
@@ -23,3 +23,6 @@ https://www.figma.com/file/JXJ7kshJVGkTgxC91G25gh/Restaurant-Finder?node-id=0%3A
 
 ## API
 * YELP Fusion - https://www.yelp.com/developers/documentation/v3
+
+## Modules
+* Nodemailer - Email functionality
