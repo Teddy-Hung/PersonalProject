@@ -1,5 +1,6 @@
-@import './resets';
-@import './variables';
+@import './scss/resets';
+@import './scss/variables';
+@import './scss/mixins';
 
 .App {
   text-align: center;

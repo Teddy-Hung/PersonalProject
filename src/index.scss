@@ -1,6 +1,6 @@
-@import './resets';
-@import './variables';
-
+@import './scss/resets';
+@import './scss/variables';
+@import './scss/mixins';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
