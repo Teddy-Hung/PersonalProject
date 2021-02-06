@@ -1,11 +1,10 @@
 # Restaurant Finder
-
-# Made by Teddy Hung
-# WR8 Cohort
-# https://www.linkedin.com/in/teddy-hung/
+Made by Teddy Hung
+WR8 Cohort
+https://www.linkedin.com/in/teddy-hung/
 
 ## Schema
-# https://www.figma.com/file/JXJ7kshJVGkTgxC91G25gh/Restaurant-Finder?node-id=0%3A1
+https://www.figma.com/file/JXJ7kshJVGkTgxC91G25gh/Restaurant-Finder?node-id=0%3A1
 
 ## Frontend
 * React - Front end JavaScript Library
