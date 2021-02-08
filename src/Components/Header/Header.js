@@ -7,10 +7,9 @@ import logo from '../../img/logo.png'
 
 const Header = (props) => {
     return (
-        <header class='header'>
-            <img class='header-logo' src={logo}/>
-            {/* <h1>MemeMountain</h1>
-            {props.location.pathname !== '/'
+        <header className='header'>
+            <img className='header-logo' src={logo}/>
+            {/* {props.location.pathname !== '/dash'
               ? (
                   <nav>
                       <Link to='/dash' className='nav-links'>Dashboard</Link>

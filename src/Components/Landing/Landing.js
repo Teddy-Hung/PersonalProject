@@ -55,59 +55,62 @@ class Landing extends Component {
 
     render() {
         return (
-            <div className='landing-container'>
-                <section className='authentication-info'>
-                    <img class='header-logo' src={logo}/>
-                    <h1>Welcome to Restaurant Finder</h1>
-                    {this.state.registerView
-                        ? (
-                            <>
-                                <h3>Register Below</h3>
-                                <input
-                                    value={this.state.username}
-                                    name='username'
-                                    placeholder='Username'
-                                    onChange={e => this.handleInput(e)} />
-                            </>
-                        )
-                        : <h3>Login Below</h3>}
-                    <input
-                        value={this.state.email}
-                        name='email'
-                        placeholder='Email'
-                        onChange={e => this.handleInput(e)} />
-                    <input
-                        value={this.state.password}
-                        name='password'
-                        type='password'
-                        placeholder='Password'
-                        onChange={e => this.handleInput(e)} />
-                    {this.state.registerView
-                        ? (
-                            <>
-                                <input
-                                    value={this.state.verPassword}
-                                    name='verPassword'
-                                    type='password'
-                                    placeholder='Verify Password'
-                                    onChange={e => this.handleInput(e)} />
-                                <input
-                                    value={this.state.profilePicture}
-                                    name='profilePicture'
-                                    placeholder='Profile Picture URL'
-                                    onChange={e => this.handleInput(e)} />
-                                <button onClick={this.handleRegister}>Register</button>
-                                <p>Have an account? <span onClick={this.handleToggle}>Login here</span></p>
-                            </>
-                        )
-                        : (
-                            <>
-                                <button onClick={this.handleLogin}>Login</button>
-                                <p>Don't have an account? <span onClick={this.handleToggle}>Register here</span></p>
-                            </>
-                        )}
-                </section>
+            <div className='landing'>
+                <div className='landing-container'>
+                    <section className='authentication-info'>
+                        <img className='header-logo' src={logo}/>
+                        <h1>Welcome to Restaurant Finder</h1>
+                        {this.state.registerView
+                            ? (
+                                <>
+                                    <h3>Register Below</h3>
+                                    <input
+                                        value={this.state.username}
+                                        name='username'
+                                        placeholder='Username'
+                                        onChange={e => this.handleInput(e)} />
+                                </>
+                            )
+                            : <h3>Login Below</h3>}
+                        <input
+                            value={this.state.email}
+                            name='email'
+                            placeholder='Email'
+                            onChange={e => this.handleInput(e)} />
+                        <input
+                            value={this.state.password}
+                            name='password'
+                            type='password'
+                            placeholder='Password'
+                            onChange={e => this.handleInput(e)} />
+                        {this.state.registerView
+                            ? (
+                                <>
+                                    <input
+                                        value={this.state.verPassword}
+                                        name='verPassword'
+                                        type='password'
+                                        placeholder='Verify Password'
+                                        onChange={e => this.handleInput(e)} />
+                                    <input
+                                        value={this.state.profilePicture}
+                                        name='profilePicture'
+                                        placeholder='Profile Picture URL'
+                                        onChange={e => this.handleInput(e)} />
+                                    <button onClick={this.handleRegister}>Register</button>
+                                    <p>Have an account? <span className='register-here'onClick={this.handleToggle}>Login here</span></p>
+                                </>
+                            )
+                            : (
+                                <>
+                                    <button onClick={this.handleLogin}>Login</button>
+                                    <p>Don't have an account? <span className='register-here' onClick={this.handleToggle}>Register here</span></p>
+                                </>
+                            )}
+                    </section>
+                </div>
             </div>
+            
         )
     }
 }
