@@ -31,28 +31,6 @@ app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.get('/api/logout', authCtrl.logout)
 
-
-
-const herokuApp = 'https://cors-anywhere.herokuapp.com/'
-const baseUrl = 'https://api.yelp.com/v3/businesses/search?term=restaurants&sort_by=distance&location=San Diego'
-var config = {
-    "headers": { 
-        method: 'GET',
-        Authorization: `Bearer ${BEARER_TOKEN}`
-    }
-};
-
 //API Endpoints
-app.get('/api/restaurant', (location) => {
-    axios.get(baseUrl, config)
-        .then( res => {
-        console.log(JSON.stringify(res.data.businesses))
-
-        // app.post('/api/restaurant', res.data.businesses)
-        // .then( postRes=> console.log(JSON.stringify(postRes.data.businesses)))
-        // .catch(err=> console.log(err))
-    })
-    .catch(err => console.log('Not connecting to API correctly: '+err))
-
-})
+app.post('/api/restaurant', mainCtrl.getRestaurant)
 

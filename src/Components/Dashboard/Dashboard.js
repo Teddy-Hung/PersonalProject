@@ -3,18 +3,17 @@ import React, {userState, useEffect, useState} from 'react'
 import Header from '../Header/Header'
 import './Dashboard.scss'
 
-
 const Dashboard = () => {
     const [userInput, setUserInput] = useState('')
-    const [location, setLocation] = useState('')
+    const [location, setLocation] = useState('San Diego')
     const [restaurantList, setRestaurantList] = useState([])
 
     useEffect(() => {
-        axios.get('/api/restaurant')
-            .then(res=> setRestaurantList(res.data.businesses))
+        axios.post('/api/restaurant', {location})
+            .then(res=> setRestaurantList(res.data))
             .catch(err => console.log(err))
     }, [])
-
+    console.log('restaurantList: ', restaurantList)
     return (
         <section className='dashboard'>
             <Header />
