@@ -6,12 +6,17 @@
     padding: 20px 0px 20px 40px;
     display:flex;
     align-items: center;
+    justify-content: space-between;
     height: 13vh;
     color: black;
     background: $accent-color;
 
     #{&}-logo{
         width: 120px;
+    }
+
+    .nav-links{
+        margin: 70px;
     }
 
     // #{&}-logo-outline{

@@ -1,43 +1,48 @@
 import axios from 'axios'
 import React, {userState, useEffect, useState} from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import Header from '../Header/Header'
+import Restaurant from '../Restaurant/Restaurant'
 import './Dashboard.scss'
+import{getRestaurants} from '../../redux/reducer'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+    const {restaurantList, getRestaurants} = props
     const [userInput, setUserInput] = useState('')
     const [location, setLocation] = useState('')
-    const [restaurantList, setRestaurantList] = useState([])
+    // const [restaurantList, setRestaurantList] = useState([])
     const [sortBy, setSortBy] = useState('best-match')
 
     useEffect(() => {
+        console.log(props)
         axios.post('/api/restaurant', {location, sortBy})
             .then(res=> {
-                setRestaurantList(res.data)
-                console.log('!!!!!!!!!!!!!!!SORT BY:',sortBy)
+                getRestaurants(res.data)
             })
             .catch(err => console.log(err))
     }, [location, sortBy])
-
-
-    console.log('restaurantList: ', restaurantList)
+    // console.log('restaurantList: ', restaurantList)
     return (
         <section className='dashboard'>
             <Header />
-            <input className='location-input' placeholder='Enter Location' onChange={e => setUserInput(e.target.value)}/>
-            <button onClick={ () => setLocation(userInput)}>Search</button>
+
             <section className='dashboard-container'>
                 <div className='restaurant-list-container'>
                     {restaurantList.map((element, index) => {
                         return <div>
-                            <h2 key={index}>{element.name}</h2>
+                            <Link to={{ pathname:`/restaurant/${element.name}`, state: {element} }}>
+                                <h2 key={index}>{element.name}</h2>
+                            </Link>
                         </div>
                     })}
                 </div>
                 <div className='sort-container'>
+                    <input className='location-input' placeholder='Enter Location' onChange={e => setUserInput(e.target.value)}/>
+                    <button onClick={ () => setLocation(userInput)}>Search</button>
                     <h2>Sort by:</h2>
                     <label>
-                        <input type="radio"  name='sort-by' onClick={() => setSortBy('best_match')} />
+                        <input type="radio"  name='sort-by' onClick={() => setSortBy('best_match')}/>
                         <span>Best Match</span>
                     </label>
                     <label>
@@ -51,9 +56,7 @@ const Dashboard = () => {
                     <label>
                         <input type="radio" name='sort-by' onClick={() => setSortBy('distance')}/>
                         <span >Distance</span>
-                    </label>
-                    
-                    
+                    </label> 
                 </div>
             </section>
         </section>
@@ -61,4 +64,8 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+const mapStateToProps = (stateRedux) => stateRedux
+
+export default connect(mapStateToProps, {getRestaurants})(Dashboard)
+
+//combineReducer

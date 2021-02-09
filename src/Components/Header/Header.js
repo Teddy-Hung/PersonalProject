@@ -9,16 +9,12 @@ const Header = (props) => {
     return (
         <header className='header'>
             <img className='header-logo' src={logo}/>
-            {/* {props.location.pathname !== '/dash'
-              ? (
-                  <nav>
-                      <Link to='/dash' className='nav-links'>Dashboard</Link>
-                      <Link to='/profile' className='nav-links'>Profile</Link>
-                  </nav>
-              )
-              : null} */}
+            <nav>
+                <Link to='/dash' className='nav-links'>Dashboard</Link>
+                <Link to='/profile' className='nav-links'>Profile</Link>
+            </nav>
         </header>
     )
 }
 
-export default Header
+export default withRouter(Header)
