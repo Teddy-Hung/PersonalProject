@@ -9,14 +9,26 @@
 
     #{&}-container{
         margin:20px;
+        @include flexCenter(row);
+
+    }
+
+    .restaurant-list-container{
+        margin-top: 10px;
+        @include flexCenter(column);
+        width: 600px;
+        height: 700px;
+        background: rgba(150, 150, 150, 0.87);
+        box-shadow: 5px 5px 8px black;
+    }
+
+    .sort-container{
+        margin-top: 10px;
+        @include flexCenter(column);
+        width: 250px;
+        height: 700px;
+        background: rgba(150, 150, 150, 0.87);
+        box-shadow: 5px 5px 8px black;
     }
 }
 
-.restaurant-list-container{
-    margin-top: 10px;
-    @include flexCenter(column);
-    width: 600px;
-    height: 700px;
-    background: rgba(150, 150, 150, 0.87);
-    box-shadow: 5px 5px 8px black;
-}
