@@ -1,11 +1,16 @@
 import axios from 'axios'
 import React, {userState, useEffect, useState} from 'react'
+import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import{getRestaurants} from '../../redux/reducer'
 import Header from '../Header/Header'
 import Restaurant from '../Restaurant/Restaurant'
 import './Dashboard.scss'
-import{getRestaurants} from '../../redux/reducer'
+//Styling Imports
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import 'fontsource-roboto';
 
 const Dashboard = (props) => {
     const {restaurantList, getRestaurants} = props
@@ -38,8 +43,8 @@ const Dashboard = (props) => {
                     })}
                 </div>
                 <div className='sort-container'>
-                    <input className='location-input' placeholder='Enter Location' onChange={e => setUserInput(e.target.value)}/>
-                    <button onClick={ () => setLocation(userInput)}>Search</button>
+                    <TextField className='location-input' label='Enter Location'  onChange={e => setUserInput(e.target.value)} />
+                    {/* <input className='location-input' placeholder='Enter Location' onChange={e => setUserInput(e.target.value)}/> */}
                     <h2>Sort by:</h2>
                     <label>
                         <input type="radio"  name='sort-by' onClick={() => setSortBy('best_match')}/>
@@ -57,6 +62,7 @@ const Dashboard = (props) => {
                         <input type="radio" name='sort-by' onClick={() => setSortBy('distance')}/>
                         <span >Distance</span>
                     </label> 
+                    <Button className='search-button' variant='contained' onClick={ () => setLocation(userInput)}>Search</Button>
                 </div>
             </section>
         </section>
@@ -64,8 +70,9 @@ const Dashboard = (props) => {
     )
 }
 
-const mapStateToProps = (stateRedux) => stateRedux
 
+
+const mapStateToProps = (stateRedux) => stateRedux
 export default connect(mapStateToProps, {getRestaurants})(Dashboard)
 
 //combineReducer

@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 import { getUser } from '../../redux/reducer'
 import './Landing.scss'
 import logo from '../../img/logo.png'
+//Styling Imports
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import 'fontsource-roboto';
+
 
 
 class Landing extends Component {
@@ -64,46 +69,46 @@ class Landing extends Component {
                             ? (
                                 <>
                                     <h3>Register Below</h3>
-                                    <input
+                                    <TextField
                                         value={this.state.username}
                                         name='username'
-                                        placeholder='Username'
+                                        label='Username'
                                         onChange={e => this.handleInput(e)} />
                                 </>
                             )
                             : <h3>Login Below</h3>}
-                        <input
+                        <TextField
                             value={this.state.email}
                             name='email'
-                            placeholder='Email'
+                            label='Email'
                             onChange={e => this.handleInput(e)} />
-                        <input
+                        <TextField
                             value={this.state.password}
                             name='password'
                             type='password'
-                            placeholder='Password'
+                            label='Password'
                             onChange={e => this.handleInput(e)} />
                         {this.state.registerView
                             ? (
                                 <>
-                                    <input
+                                    <TextField
                                         value={this.state.verPassword}
                                         name='verPassword'
                                         type='password'
-                                        placeholder='Verify Password'
+                                        label='Verify Password'
                                         onChange={e => this.handleInput(e)} />
-                                    <input
+                                    <TextField
                                         value={this.state.profilePicture}
                                         name='profilePicture'
-                                        placeholder='Profile Picture URL'
+                                        label='Profile Picture URL'
                                         onChange={e => this.handleInput(e)} />
-                                    <button onClick={this.handleRegister}>Register</button>
+                                    <Button variant='contained' onClick={this.handleRegister}>Register</Button>
                                     <p>Have an account? <span className='register-here'onClick={this.handleToggle}>Login here</span></p>
                                 </>
                             )
                             : (
                                 <>
-                                    <button onClick={this.handleLogin}>Login</button>
+                                    <Button variant='contained' onClick={this.handleLogin}>Login</Button>
                                     <p>Don't have an account? <span className='register-here' onClick={this.handleToggle}>Register here</span></p>
                                 </>
                             )}

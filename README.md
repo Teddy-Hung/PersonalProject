@@ -13,6 +13,7 @@ https://www.figma.com/file/JXJ7kshJVGkTgxC91G25gh/Restaurant-Finder?node-id=0%3A
 * react-router-dom - Allows for routing in a React application
 * axios - Makes http requests to a server
 * node-sass - Styling
+* material-ui - Styling
 
 ## Backend
 * express - Node framework for building a server

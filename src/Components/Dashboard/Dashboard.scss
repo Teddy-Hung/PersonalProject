@@ -18,7 +18,7 @@
         @include flexCenter(column);
         width: 600px;
         height: 700px;
-        background: rgba(150, 150, 150, 0.87);
+        background: rgba(150, 150, 150, 0.959);
         box-shadow: 5px 5px 8px black;
     }
 
@@ -27,8 +27,20 @@
         @include flexCenter(column);
         width: 250px;
         height: 700px;
-        background: rgba(150, 150, 150, 0.87);
+        background: rgba(150, 150, 150, 0.959);
         box-shadow: 5px 5px 8px black;
+
+        .location-input {
+            margin-bottom: 10px;
+            font-weight: 900;
+            color:black;
+        }
+
+        .search-button {
+            margin-top: 18px;
+            box-shadow: 2px 2px 8px black;
+        }
     }
+    
 }
 
