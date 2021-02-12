@@ -9,5 +9,18 @@ create table rf_users (
 create table saved_restaurants (
     saved_id serial primary key,
     user_id int references rf_users(user_id),
-    restaurant_id text
-)
+    restaurant_id text,
+    restaurant_url text,
+    restaurant_name varchar(150),
+    restaurant_img text,
+    phone varchar(100),
+    rating float,
+    review_count integer,
+    address1 varchar(150),
+    city varchar(10),
+    zip_code varchar(30),
+    country varchar(40),
+    state varchar(10),
+    price text
+
+);

@@ -1,16 +1,16 @@
 import axios from 'axios'
 import React, {userState, useEffect, useState} from 'react'
-import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import{getRestaurants} from '../../redux/reducer'
+//Component Imports
 import Header from '../Header/Header'
 import Restaurant from '../Restaurant/Restaurant'
-import './Dashboard.scss'
 //Styling Imports
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import 'fontsource-roboto';
+import './Dashboard.scss'
 
 const Dashboard = (props) => {
     const {restaurantList, getRestaurants} = props
@@ -20,7 +20,6 @@ const Dashboard = (props) => {
     const [sortBy, setSortBy] = useState('best-match')
 
     useEffect(() => {
-        console.log(props)
         axios.post('/api/restaurant', {location, sortBy})
             .then(res=> {
                 getRestaurants(res.data)

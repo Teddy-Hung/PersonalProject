@@ -13,6 +13,7 @@ const Header = (props) => {
             <img className='header-logo' src={logo}/>
             <nav>
                 <Link to='/dash' className='nav-links'>Dashboard</Link>
+                <Link to='/restaurant-list' className='nav-links'>Restaurant List</Link>
                 <Link to='/profile' className='nav-links'>Profile</Link>
             </nav>
         </header>

@@ -21,6 +21,9 @@
 
         .restaurant-image{
             width:250px;
+            margin: 15px;
+            box-shadow: 5px 5px 8px black;
+
         }
 
         .price-open-container{
@@ -51,8 +54,18 @@
         .restaurant-address-container{
             margin-top: 10px;
         }
+
+        h5{
+            margin-top: 10px;
+        }
+
+        // .restaurant-category{
+        //     display: flex;
+        //     flex-direction: row;
+        // }
     }
 
+    
     #{&}-container2{
         margin-top: 10px;
         @include flexCenter(column);
@@ -60,6 +73,13 @@
         height: 600px;
         background: rgb(150, 150, 150);
         box-shadow: 5px 5px 8px black;
+
+        img{
+            margin:15px;
+            width:250px;
+            box-shadow: 5px 5px 8px black;
+            overflow:auto;
+        }
     }
 
     footer{
