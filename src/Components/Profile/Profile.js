@@ -6,6 +6,8 @@ import { getUser, clearUser } from '../../redux/reducer'
 import Button from '@material-ui/core/Button'
 import 'fontsource-roboto'
 import './Profile.scss'
+import defaultPic from '../../img/default-profile-pic.jpg'
+import { TextField } from '@material-ui/core'
 
 const Profile = (props) => {
     const [username, setUsername] = useState('')
@@ -40,28 +42,32 @@ const Profile = (props) => {
 
     console.log(props)
     return (
-        <section>
+        <section className='profile'>
            <Header />
-           <h1>Welcome</h1>
-           {/* <img src={props.user.profile_picture} alt={props.user.username}/> */}
-           {!editView
-                ? (
-                <div>
-                    <h2>{props.user.username}</h2>
-                    <button onClick={()=> setEditView(!editView)}>Edit Username</button>
-                </div>
-                )
-                : (
-                <div>
-                    <input
-                    value={username}
-                    placeholder='New Username'
-                    onChange={e => setUsername(e.target.value)} />
-                    <button onClick={updateUsername} id='edit-btn'>Submit</button>
-                </div>
-            )}
-            <h2>{props.user.email}</h2>
-            <button onClick={handleLogout}>Logout</button>
+           <section className='profile-flex-box'>
+               <section className='profile-container'>
+                    {!editView
+                            ? (
+                            <div className='edit-user-container'>
+                                <img className='profile-pic' src={defaultPic}/>
+                                <h2>Welcome to your profile</h2>
+                                <h4>Username: {props.user.username}</h4>
+                                <Button className='edit-button' variant='contained' onClick={()=> setEditView(!editView)}>Edit Username</Button>
+                            </div>
+                            )
+                            : (
+                            <div>
+                                <TextField
+                                value={username}
+                                placeholder='New Username'
+                                onChange={e => setUsername(e.target.value)} />
+                                <Button variant='contained' onClick={updateUsername} id='edit-btn'>Submit</Button>
+                            </div>
+                        )}
+                        <h4>Email: {props.user.email}</h4>
+                        <Button variant='contained' onClick={handleLogout}>Logout</Button>
+               </section>
+           </section>
         </section>
     )
 }

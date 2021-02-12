@@ -34,7 +34,7 @@ app.get('/api/logout', authCtrl.logout)
 //Main Endpoints
 app.post('/api/addRestaurant', mainCtrl.addRestaurant)
 app.get('/api/saved-restaurants/:id', mainCtrl.getUserList)
-app.delete('/api/saved-restaurants', mainCtrl.deleteRestaurant)
+app.delete('/api/saved-restaurants/:user_id&:restaurantId', mainCtrl.deleteRestaurant)
 
 //User Endpoints
 app.put('/api/user/:id', mainCtrl.updateUsername)
@@ -42,5 +42,8 @@ app.put('/api/user/:id', mainCtrl.updateUsername)
 //API Endpoints
 app.post('/api/restaurant', mainCtrl.getRestaurant)
 app.get('/api/restaurant/:id', mainCtrl.getRestaurantById)
+
+//NodeMailer Endpoints
+app.post('/api/email', mainCtrl.email)
 
 
